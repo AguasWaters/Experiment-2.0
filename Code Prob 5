@@ -1,0 +1,42 @@
+// Create a program that will "count" numbers, separated by commas, up to 10.  When it reaches 10, count by 2s until you reach 30.
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main ()
+{
+	int count;
+	
+	cout << " THIS IS AMAZING!! " << endl;
+	cout << ' ' << endl;
+	
+	count = 1;
+	
+	while ( count <= 30 )
+	{
+		if ( count > 10 && count < 29 )
+		{
+			count = count + 1;
+			cout << count << ",";
+			count ++;
+		}
+		
+		else if ( count <= 10 )
+		{
+			cout << count << ",";
+			count ++;
+		}
+		
+		else if (count = 29)
+		{
+			count = count + 1;
+			cout << count << endl;
+			count ++;
+		}
+	}
+	
+	_getch();
+	return 0;
+}
