@@ -1,0 +1,64 @@
+// Write a C++ program that accepts two integers x and y from the kbd.
+// Let z =2.5. Use a constant declaration for z and output V with 10 field width and two decimal places. Use switch statement for selection of x values. 
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <conio.h>
+
+using namespace std;
+
+int main ()
+{
+	int x, y;
+	double V;
+	const float z = 2.5;
+	
+	cout << "Enter the value of x: "; cin >> x;
+	cout << ' ' << endl;
+	
+	cout << "Enter the value of y: "; cin >> y;
+	cout << ' ' << endl;
+	
+	switch (x)
+	{
+		case 1:
+			if ( x == 1 && y > 1 && y < 5)
+			{ 
+				V = x * y * z; 
+				cout << "The value of V is: " << setw(10) << setprecision(2) << V;
+				break;
+			}
+			
+			else
+			{
+				x == 1 && y >= 5;
+				V = x + ( y / z );
+				cout << "The value of V is: " << setw(10) << setprecision(2) << V;
+				break;
+			}
+		
+		case 2:
+			if (x == 2 && y <= 5)
+			{
+				V = abs((x - y) / z);
+				cout << "The value of V is: " << setw(10) << setprecision(2) << V;
+				break;
+			}
+			
+			else
+			{
+				x == 2 && y > 5;
+				V = x - (sqrt(y + z));
+				cout << "The value of V is: " << setw(10) << setprecision(2) << V;
+				break;
+			}
+			
+			default:
+				V = x + y + z;
+				cout << "The value of V is: " << setw(10) << setprecision(2) << V;
+	}
+
+	_getch();
+	return 0;
+}
