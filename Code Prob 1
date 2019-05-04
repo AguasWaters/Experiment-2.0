@@ -1,0 +1,106 @@
+// Write a program that calculates a customer's monthly bill. It should ask which package the customer has purchased and how many hours were used.
+// It should then display the total amount due.  
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main ()
+{
+	char package;
+	int PA, PB, PC;
+	float time, TAD;
+	PA = 955;
+	PB = 1495;
+	PC = 1995;
+	
+	cout << "These are the three different subscription packages given by your Internet Service Provider:" << endl;
+	cout << ' ' << endl;
+	cout << "Package A: For P995/mo 10 hrs of access are provided. Additional hours are P20/hr. " << endl;
+	cout << "Package B: For P1495/mo 20 hrs of access are provided. Additional hours are P10/hr." << endl;
+	cout << "Package C: For P1995/mo of unlimited access is provided. " << endl;
+	cout << ' ' << endl;
+	
+	cout << "Which package among A, B, and C have you purchased? ";
+	cin >> package;
+	cout << ' ' << endl;
+	
+	cout << "Then how many hours did you use in a month? ";
+	cin >> time; 
+	cout << ' ' << endl;
+	
+	switch (package)
+	{
+		case 'a':
+		case 'A':
+			if (time >= 10 && time <= 744) // The maximum time a customer can use is 744 hours in a month.
+			{
+				TAD = PA + ((time - 10)*20);
+				cout << " Your monthly bill in peso is: " << TAD;
+				break;
+			}
+				
+		else if (time >= 745)
+			{
+				TAD = PA + ((744 - 10)*20);
+				cout << "Your subscription is over by that time. Assuming that you used 744 hours maximum, your monthly bill in peso is: " << TAD << endl;
+				cout << "Please pay your additional hours and subcribe for more!! ";
+					break;
+			}
+
+			else if (time >= 0 && time < 10 )
+			{
+				TAD = 955;
+				cout << " Your monthly bill in peso is: " << TAD;
+				break;
+			}
+			
+				
+		case 'b':
+		case 'B':
+			if (time > 20 && time <= 744)
+			{
+				TAD = PB + ((time - 20)*10);
+				cout << " Your monthly bill in peso is: " << TAD;
+				break;
+			}
+			
+			else if (time >= 745)
+			{
+				TAD = PB + ((744 - 20)*10);
+				cout << "Your subscription is over by that time. Assuming that you used 744 hours maximum, your monthly bill in peso is: " << TAD << endl;
+				cout << "Please pay your additional hours and subcribe for more!! ";
+					break;
+			}
+			else if (time >= 0 && time < 20)
+			{
+				TAD = 1495;
+				cout << " Your monthly bill in peso is: " << TAD;
+				break;
+			}
+				
+		case 'c':
+		case 'C':
+			if (time > 0 && time <= 744)
+			{
+					TAD = PC;
+				cout << " Your monthly bill is " << TAD;
+				break;
+			}
+				
+			else if (time > 0 && time >= 745 )
+			{
+				TAD = PC;
+				cout << "Your subscription is over by that time. Thus your monthly bill in peso is: " << TAD << endl;
+				cout << "Subcribe for more!!! ";
+					break;
+			}	
+				default:
+				cout << "Invalid package or number of hours!!";
+	}
+				
+				_getch();
+				return 0;
+			
+}
