@@ -1,0 +1,43 @@
+// Write a program that computes a customer's water bill
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main ()
+{
+	int Demand;
+	double Charge, Bill, Gallons, Paid, Change, Debt;
+	Charge = 1.01;
+	Demand = 35;
+	
+	cout << "How many gallons have you consumed based from the meter reading taken recently and during the previous month?" << endl;
+	cin >> Gallons;
+	cout << ' ' << endl;
+	
+	Bill = Demand + (Gallons * Charge);
+	cout << "Your water bill cost: " << Bill << endl;
+	cout << ' ' << endl;
+	
+	cout << "How much money are you going to pay? " << endl;
+	cin >> Paid;
+	
+	if (Paid < Bill)
+		{
+			Bill = (Demand + (Gallons * Charge))+20;
+			Debt = Bill - Paid;
+			cout << "You'll be charge an additional late charge fee of 20 pesos" << endl;
+			cout << "Thus you water bill would cost: " << Bill << endl;
+			cout << "And you will have a depth of: " << Debt << endl;
+		}
+	
+	else if (Paid > Bill )
+		{
+			Change = Paid - Bill;
+			cout << "Thank you! Your change is: " << Change;
+		}
+	
+	  _getch();
+		return 0;
+}
