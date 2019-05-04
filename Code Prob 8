@@ -1,0 +1,23 @@
+// Create a program that will generate the multiplication table (up to x10) of a number.
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main ()
+{
+	int number;
+	
+	cout << "What number do you want? "; cin >> number;
+	cout << ' ' << endl;
+	cout << "The multiplication table of "<<number<<" is:" << endl;
+	
+	for(int a = 1 ; a <= 10; a++)
+	{
+		cout << number << " * "<< a <<" = " << number * a << endl;
+	}
+	
+	_getch();
+	return 0;
+}
