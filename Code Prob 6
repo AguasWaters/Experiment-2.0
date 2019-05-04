@@ -1,0 +1,42 @@
+// Create a program that will output the NEXT 20 Fibonacci numbers (after 0 and 1) in one line, separated by commas.
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main ()
+{
+	int  Zero, One, Next, Again, More;
+	Zero = 0;
+	One = 1;
+	Again = 1;
+	More = 2 + 20;
+	
+	
+	
+	cout << "This is the NEXT 20 Fibonacci numbers after 0 and 1: " << endl;
+	cout << " " << endl;
+	
+	cout << Zero << "," << One << ",";
+	
+	for (Again; Again <= 20; Again++)
+	{
+		if ( Again == 20)
+		{
+			Next = Zero + One;
+			cout << Next;
+		}
+		else
+		{
+		Next = Zero + One;
+		Zero = One;
+		One = Next;
+		
+		cout << Next << ",";
+		}
+	}
+	
+	_getch();
+	return 0;
+}
