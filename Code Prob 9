@@ -1,0 +1,29 @@
+// Create a program that will draw a box using "*" characters given its dimensions in rows and columns.
+
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main ()
+{
+	int rows, columns, h, i, a;
+	
+	cout << "How many rows: "; cin >> rows;
+	cout<< ' ' << endl;
+	
+	cout << "How many columns: "; cin >> columns;
+	cout<< ' ' << endl;
+
+	for ( h = 1; h <= rows; h++ )
+	{
+		for ( i = 1; i <= columns; i++)
+		{
+			cout << "*";	
+		}
+		cout << endl;
+	}
+	
+	_getch();
+	return 0;
+}
